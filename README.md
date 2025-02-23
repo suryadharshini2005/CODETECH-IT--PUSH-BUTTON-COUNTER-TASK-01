@@ -32,7 +32,8 @@ Digital Input/Output – Button and LED control using Arduino’s GPIO pins.
 
 OUTPUT
 
-![Image](https://github.com/user-attachments/assets/323efd8c-d6b5-492e-9fe4-1120850c7332)
+![image](https://github.com/user-attachments/assets/eec33bb0-ea7d-4ca1-8b54-b24cf65736e7)
+
 
 
 
