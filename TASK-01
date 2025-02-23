@@ -1,0 +1,32 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+const int buttonPin = 2;  
+int buttonState = 1;
+int lastButtonState = 1;
+int counter = 0;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup() {
+    pinMode(buttonPin, INPUT_PULLUP);  
+    lcd.begin(16, 2);
+    lcd.backlight();
+    lcd.setCursor(0, 0);
+    lcd.print("Push Count: 0");
+}
+
+void loop() {
+    buttonState = digitalRead(buttonPin);
+
+    if (buttonState == LOW && lastButtonState == HIGH) {  
+        delay(10);
+        if (digitalRead(buttonPin) == LOW) {  
+            counter++;
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print("Push Count: ");
+            lcd.print(counter);
+        }
+    }
+    lastButtonState = buttonState;
+}
